@@ -1,36 +1,59 @@
-"""Projeto Copa do Mundo 2018 - Análise"""
+"""Projeto Copa do Mundo 2018 - Análise
 
+Ideia principal: realizar um sorteio randômico de placares de acordo com o enfrentamento das seleções no decorrer
+da Copa. As seleções serão divididas em 2 grupos: os favoritos e as zebras. O que define a chance de vitória de uma
+seleção sobre a outra é o sorteio de placares em duas listas diferentes (favoritos e zebra), cada qual com resultados
+possíveis de gols marcados por determinada seleção em cada partida"""
 
-class CorPy:
-    azul = '\033[1;34m'
-    vermelho = '\033[1;31m'
-    turquesa = '\033[1;36m'
-    amarelo = '\033[1;33m'
-    verde = '\033[1;32m'
-    end = '\033[m'
+from time import sleep
+from random import randint
 
+favorito = [0, 0, 1, 1, 2, 2, 2, 3, 3, 4]  # Lista favorito com gols possíveis de serem marcados por seleções favoritas
+zebra = [0, 0, 0, 0, 1, 1, 1, 1, 2, 3]  # Lista zebra com gols possíveis de serem marcados por seleções zebra
+status = {'Jogos': 0, 'Total de Gols': 0}
 
-class selecao:
-    brasil = {'Nome': 'Brasil', 'J': 0, 'P': 0, 'V': 0, 'GP': 0, 'GC': 0, 'SG': 0,
-              'Jogadores': {1: 'Alisson', 22: 'Fagner', 3: 'Miranda', 4: 'Thiago Silva', 12: 'Marcelo',
-                            5: 'Casemiro', 8: 'Renato Augusto', 15: 'Paulinho',
-                            10: 'Neymar', 11: 'Coutinho', 9: 'G. Jesus'}}
+# Cadastrando todas as 32 seleções participantes
+russia = {'Nome': 'Russia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+brasil = {'Nome': 'Brasil', 'Tipo': favorito, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+ira = {'Nome': 'Irã', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+japao = {'Nome': 'Japão', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+mexico = {'Nome': 'México', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+belgica = {'Nome': 'Bélgica', 'Tipo': favorito, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+coreia = {'Nome': 'Coréia do Sul', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+arabia = {'Nome': 'Arábia Saudita', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+alemanha = {'Nome': 'Alemanha', 'Tipo': favorito, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+inglaterra = {'Nome': 'Inglaterra', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+espanha = {'Nome': 'Espanha', 'Tipo': favorito, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+nigeria = {'Nome': 'Nigéria', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+costa = {'Nome': 'Costa Rica', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+polonia = {'Nome': 'Polônia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+egito = {'Nome': 'Egito', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+islandia = {'Nome': 'Islândia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+servia = {'Nome': 'Sérvia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+franca = {'Nome': 'França', 'Tipo': favorito, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+portugal = {'Nome': 'Portugal', 'Tipo': favorito, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+argentina = {'Nome': 'Argentina', 'Tipo': favorito, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+colombia = {'Nome': 'Colômbia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+uruguai = {'Nome': 'Uruguai', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+panama = {'Nome': 'Panamá', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+senegal = {'Nome': 'Senegal', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+marrocos = {'Nome': 'Marrocos', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+tunisia = {'Nome': 'Tunísia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+suica = {'Nome': 'Suiça', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+croacia = {'Nome': 'Croácia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+suecia = {'Nome': 'Suécia', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+dinamarca = {'Nome': 'Dinamarca', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+australia = {'Nome': 'Austrália', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
+peru = {'Nome': 'Peru', 'Tipo': zebra, 'J': 0, 'P': 0, 'V': 0, 'E': 0, 'D': 0, 'GP': 0, 'GC': 0, 'SG': 0}
 
-    suica = {'Nome': 'Suiça', 'J': 0, 'P': 0, 'V': 0, 'GP': 0, 'GC': 0, 'SG': 0,
-             'Jogadores': {1: 'Sommer', 2: 'Lichtsteiner', 22: 'Schär', 12: 'Akanji', 13: 'R. Rodriguez',
-                           5: 'Zakaria', 10: 'Xhaka', 15: 'Dzemaili',
-                           23: 'Shaqiri', 14: 'Zuber', 9: 'Seferovic'}}
-
-    servia = {'Nome': 'Sérvia', 'J': 0, 'P': 0, 'V': 0, 'GP': 0, 'GC': 0, 'SG': 0,
-              'Jogadores': {1: 'Stojkovic', 2: 'Rukavina', 22: 'Tosic', 12: 'Ivanovic', 13: 'Kolarov',
-                           21: 'Matic', 10: 'M. Savic', 15: 'Gudelj',
-                           23: 'Ljajic', 14: 'Tadic', 9: 'Mitrovic'}}
-
-    costaRica = {'Nome': 'Costa Rica', 'J': 0, 'P': 0, 'V': 0, 'GP': 0, 'GC': 0, 'SG': 0,
-                 'Jogadores': {1: 'Keylor Navas', 2: 'Waston', 22: 'Acosta', 12: 'Gonzales', 13: 'Oviedo',
-                               21: 'Gamboa', 10: 'Guzman', 15: 'Borges',
-                               23: 'C. Bolaños', 14: 'Bryan Ruiz', 9: 'Ureña'}}
-
-
-
+# Separando as seleções em seus respectivos grupos (objeto)
+class Grupo:
+    A = [arabia, egito, russia, uruguai]
+    B = [espanha, ira, marrocos, portugal]
+    C = [australia, dinamarca, franca, peru]
+    D = [argentina, croacia, islandia, nigeria]
+    E = [brasil, costa, servia, suica]
+    F = [alemanha, coreia, mexico, suecia]
+    G = [belgica, inglaterra, panama, tunisia]
+    H = [colombia, japao, polonia, senegal]
 
