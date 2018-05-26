@@ -10,7 +10,8 @@ novos conceitos sejam adicionados (inclusive por qualquer um interessado em comp
 
 # Primeiros Passos
 Como, a princípio, este projeto possui raízes pessoais, separei alguns conceitos para serem aplicados de acordo com um objetivo inicial 
-(passível de alteração): criar um banco de dados com jogadores das seleções que enfrentarão o Brasil na Copa do Mundo para análise de 
-parâmetros variados, como 'Jogos', 'Pontos', 'Vitórias', 'Derrotas', 'Melhor Jogador da Partida', entre outros.
+(passível de alteração): trabalhar com Orientação à Objeto para criar <i>classes</i> referentes às entidades envolvidas no programa. Pretende-se criar objetos para as 32 seleções classificadas, separando-as em dois grandes grupos (atributo "Tipo"), sendo estes "favorita" e "zebra". Este atributo nos mostra a probabilidade de uma seleção vencer a outra em um confronto direto. As seleções serão separadas em grupos e os confrontos serão decididos. O placar será sorteado através da biblioteca <b>random</b>.
 
-<img src = "https://drive.google.com/file/d/14lTo-ZbUTTfC1jatAdjDPBKKgiLRsRcF/view?usp=sharing"/>
+Ideia: contagem regressiva e somatória de gols em 10 segundos de partida
+
+
