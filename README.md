@@ -17,4 +17,4 @@ Bom, assim como o pequeno <i>spoiler</i> dado na palavra destacada, o intuito in
 
 Dada a introdução citada, a versão mais recente da modelagem deste projeto pode ser encontrada abaixo:
 
-<img src="https://uploaddeimagens.com.br/imagens/worldcup_modelagem-jpg"/>
+<img src="https://uploaddeimagens.com.br/imagens/worldcup_modelagem-jpg">
