@@ -20,3 +20,4 @@ Dada a introdução acima citada, a versão mais recente da modelagem deste proj
 <a href="http://pt-br.tinypic.com?ref=a5i1xd" target="_blank"><img src="http://i67.tinypic.com/a5i1xd.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
 
 Foram obtidas diversas versões do modelo acima e, da mesma forma, outras diversas versões foram adaptadas e passadas por processos de normalização para otimização de tabelas e relações. Os atributos foram definidos de acordo com a utilidade do projeto e a possibilidade de captar dados reais referentes a tais campos através dos jogos propriamente ditos.
+Contudo, a modelagem acima ainda não está isenta de alterações, dada a divulgação pública do projeto e a clara abertura do projeto à opiniões externas, sejam estas oriundas de amigos próximos ou simplesmente simpatizantes do assunto.
