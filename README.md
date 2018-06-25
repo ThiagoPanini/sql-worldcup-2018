@@ -15,6 +15,8 @@ Bom, assim como o pequeno <i>spoiler</i> dado na palavra destacada, o intuito in
 
 # Modelagem de Dados - Copa Do Mundo
 
-Dada a introdução citada, a versão mais recente da modelagem deste projeto pode ser encontrada abaixo:
+Dada a introdução acima citada, a versão mais recente da modelagem deste projeto pode ser encontrada abaixo:
 
-<img src="https://uploaddeimagens.com.br/imagens/worldcup_modelagem-jpg">
+<a href="http://pt-br.tinypic.com?ref=a5i1xd" target="_blank"><img src="http://i67.tinypic.com/a5i1xd.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+
+Foram obtidas diversas versões do modelo acima e, da mesma forma, outras diversas versões foram adaptadas e passadas por processos de normalização para otimização de tabelas e relações. Os atributos foram definidos de acordo com a utilidade do projeto e a possibilidade de captar dados reais referentes a tais campos através dos jogos propriamente ditos.
