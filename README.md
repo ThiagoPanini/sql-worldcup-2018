@@ -1,17 +1,20 @@
 # World Cup Russia 2018
 A ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018. A utilização
-e o aprimoramento dos diversos conceitos aprendidos ao longo dessa caminhada é a principal motivação deste projeto, além de, claro,
-se tratar de algo extremamente apaixonante que é este primoroso evento quatrienal conhecido como Copa do Mundo.
+e o aprimoramento dos diversos conceitos aprendidos ao longo dessa caminhada é a principal motivação deste projeto, além de se tratar de algo extremamente apaixonante que se refere a este primoroso evento quatrienal conhecido como Copa do Mundo. 
+#JáÉCopa
 
 <img src="https://www.bodog.net/wp-content/uploads/2018/01/statistics_copa_do_mundo-1.jpg"/>
 
-Levado pelos recentes estudos, o projeto se inicia com a linguagem Python como base de construção. Nada impede que, ao longo do tempo, 
-novos conceitos sejam adicionados (inclusive por qualquer um interessado em complementar o desenvolvimento).
-
-# Primeiros Passos
-Como, a princípio, este projeto possui raízes pessoais, separei alguns conceitos para serem aplicados de acordo com um objetivo inicial 
-(passível de alteração): trabalhar com Orientação à Objeto para criar <i>classes</i> referentes às entidades envolvidas no programa. Pretende-se criar objetos para as 32 seleções classificadas, separando-as em dois grandes grupos (atributo "Tipo"), sendo estes "favorita" e "zebra". Este atributo nos mostra a probabilidade de uma seleção vencer a outra em um confronto direto. As seleções serão separadas em grupos e os confrontos serão decididos. O placar será sorteado através da biblioteca <b>random</b>.
-
-Ideia: contagem regressiva e somatória de gols em 10 segundos de partida
+Levado pelos recentes estudos, o projeto tem como primeiro alicerce a aplicação de conceitos de SQL para controlar, dentro um Banco de Dados, os fatos ocorridos durante a Copa do Mundo. Em outras palavras, visando aitribuir uma forma dinâmica ao aprendizado, pretende-se criar e atualizar eventos relevantes dentro de um SGBD. Mas como isso seria possível?
 
 
+# Primeiros Passos - Banco de Dados
+Como, a princípio, este projeto possui raízes pessoais, foram separados alguns conceitos para serem aplicados no decorrer do aprendizado. Sabe-se que a linguagem SQL está sempre em pauta e possuir domínio sobre esta caracteriza um atributo de caráter <i>essencial</i>. Unir este processo de aprendizado com a <b>modelagem</b> de um conceito presente no cotidiano de muitas pessoas foi a maneira encontrada para unir, de fato, o útil ao agradável, instigando um projeto dinâmico com muito a contribuir ao(s) engajado(s).
+
+Bom, assim como o pequeno <i>spoiler</i> dado na palavra destacada, o intuito inicial é realizar a <b>modelagem</b> do Banco, abordando todos os conceitos necessários, Análise de Requisitos, verificação de tabelas, atributos, relacionamentos, entre outros tópicos que não só auxiliam na criação do BD, como também atuam de modo a otimizar este processo e evitar erros.
+
+# Modelagem de Dados - Copa Do Mundo
+
+Dada a introdução citada, a versão mais recente da modelagem deste projeto pode ser encontrada abaixo:
+
+<img src="https://uploaddeimagens.com.br/imagens/worldcup_modelagem-jpg"/>
