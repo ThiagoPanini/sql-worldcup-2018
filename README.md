@@ -37,12 +37,12 @@ Contudo, a modelagem acima ainda não está isenta de alterações, dada a divul
 # PostgreSQL
 
 Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de acordo com o Diagrama acima apresentado. Foi instalado o Banco de Dados PostgreSQL no Linux Ubuntu 18.04, bem como a interface pgadmin4 para auxiliar nas consultas/solicitações.
-
+<p>
 <img src="http://www.agilitynetworks.com.br/blogdaagility/wp-content/uploads/2015/11/postgresql_1.png"/>
-
+</p>
 ## Tabela Seleção
 
-### Criando tabela Seleção
+### CREATE TABLE selecao
 
 Para a criação da tabela responsável por referenciar as seleções presentes neste modelo de Copa do Mundo, foi utilizada a seguinte sintaxe:
 
@@ -53,7 +53,7 @@ nome_selecao character varying(50),
 continente character varying(50));
 ```
 
-### Inserindo dados na tabela Seleção
+### INSERT INTO selecao
 
 Para a inserção das seleções dentro da tabela, foi utilizada uma sintaxe que permitiu inserir todos os dados de uma única vez, sem a repetição da query <i>INSERT INTO</i>.
 
@@ -68,15 +68,15 @@ INSERT INTO selecao (nome_selecao, continente) values
 ...);
 ```
 
-### select * from selecao
+### SELECT * FROM selecao
 
 <a href="http://pt-br.tinypic.com?ref=300zosp" target="_blank"><img src="http://i67.tinypic.com/300zosp.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
-_
+-
 
 ## Tabela Grupo_Selecoes
 
-### Criando tabela Grupo_Selecoes
+### CREATE TABLE grupo_selecoes;
 
 A tabela grupo_selecoes tem por finalidade referenciar cada seleção criada através de seu respectivo grupo e armazenar, em seus registros, a condição atual dentro do grupo (pontos, vitórias, derrotas, empates, etc...).
 
@@ -92,6 +92,36 @@ derrotas smallint NOT NULL CHECK (pontos >= 0) default 0,
 PRIMARY KEY (nome_grupo, id_selecao),
 CHECK (nome_grupo in ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H')));
 ```
+
+CONSTRAINTS: 
+- Nenhum campo deve ser nulo;
+- O campo id_selecao funciona como Chave Estrangeira da tabela selecao,
+- Os campos nome_grupo e id_selecao, juntos, atuam como uma Chave Primária Composta,
+- Os campos pontos, jogos, vitorias, empates e derrotas, não podem ser nulos, possuem valor default = 0 e, por fim, possuem restrição de negativos,
+- O campo nome_grupo deve estar entre os caracteres listados.
+
+
+### INSERT INTO grupo_selecoes;
+
+A inserção dos valores se deu de modo único, ou seja, todos os valores foram colocados através de uma única Query. Um ponto a ser citado é o valor default dos demais atributos, tornando opcional sua declaração neste momento inicial.
+
+```
+INSERT INTO grupo_selecoes values
+('A', 1),
+('A', 2),
+('A', 3),
+('A', 4),
+('B', 5),
+('B', 6),
+...
+('H', 32);
+```
+
+### SELECT * FROM grupo_selecoes
+
+
+
+
 
 # Project Title
 
