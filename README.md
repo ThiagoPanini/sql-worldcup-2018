@@ -119,7 +119,7 @@ INSERT INTO grupo_selecoes values
 
 ### SELECT * FROM grupo_selecoes
 
-
+<a href="http://pt-br.tinypic.com?ref=34hc26f" target="_blank"><img src="http://i68.tinypic.com/34hc26f.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
 
 
