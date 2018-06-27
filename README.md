@@ -16,7 +16,7 @@ Levado pelos recentes estudos, o projeto tem como primeiro alicerce a aplicaçã
 
 <a href="https://www.pgadmin.org/download/">pgAdmin4</a> - Interface via browser para utilização do Postgres.
 
-<a href="http://www.eclipse.org/downloads/">Eclipse IDE for Java Developers</a> - IDE Eclipse para integrações futuras (JDBC e JPA com Hibernate).
+<a href="http://www.eclipse.org/downloads/">Eclipse</a> - Eclipse IDE for Java Developers(integrações JDBC e JPA com Hibernate).
 
 <a href="https://drive.google.com/file/d/17hz1C3DqXLvEzx7oEXj6Pd3XVvYIIM_i/view?usp=sharing">postgresql-42.2.2.jar</a> - Driver JDBC para Eclipse/Postgres.
 
@@ -27,12 +27,53 @@ Levado pelos recentes estudos, o projeto tem como primeiro alicerce a aplicaçã
 
 Sabe-se que a linguagem SQL está sempre em pauta. Saber manipula-la é <i>essencial</i>. Unir a <b>modelagem</b> de um conceito presente no cotidiano de muitas pessoas foi a maneira encontrada para instigar um projeto dinâmico e de fácil entendimento por parte de contribuidores e espectadores. 
 
-A modelagem dos dados é uma etapa crucial que deve preceder a implementação física do modelo em um SGBD. Com isso, evita-se erros
+A modelagem dos dados é uma etapa crucial que deve preceder a implementação física do modelo em um SGBD. Para o projeto em questão, foram utilizadas as ferramentas disponíveis na plataforma <b>Lucidchart</b>. O modelo pode ser visualizado abaixo:
 
 <a href="http://pt-br.tinypic.com?ref=a5i1xd" target="_blank"><img src="http://i67.tinypic.com/a5i1xd.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
 
 Foram obtidas diversas versões do modelo acima e, da mesma forma, outras diversas versões foram adaptadas e passadas por processos de normalização para otimização de tabelas e relações. Os atributos foram definidos de acordo com a utilidade do projeto e a possibilidade de captar dados reais referentes a tais campos através dos jogos propriamente ditos.
 Contudo, a modelagem acima ainda não está isenta de alterações, dada a divulgação pública do projeto e sua abertura à opiniões externas, sejam estas oriundas de amigos próximos ou simplesmente de simpatizantes do assunto.
+
+# PostgreSQL
+
+Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de acordo com o Diagrama acima apresentado. Foi instalado o Banco de Dados PostgreSQL no Linux Ubuntu 18.04, bem como a interface pgadmin4 para auxiliar nas consultas/solicitações.
+
+<img src="http://www.agilitynetworks.com.br/blogdaagility/wp-content/uploads/2015/11/postgresql_1.png"/>
+
+## Tabela Seleção
+
+### Criando tabela Seleção
+
+Para a criação da tabela responsável por referenciar as seleções presentes neste modelo de Copa do Mundo, foi utilizada a seguinte sintaxe:
+
+```
+CREATE TABLE selecao(
+id_selecao serial PRIMARY KEY NOT NULL,
+nome_selecao character varying(50),
+continente character varying(50));
+```
+
+### Inserindo dados na tabela Seleção
+
+Para a inserção das seleções dentro da tabela, foi utilizada uma sintaxe que permitiu inserir todos os dados de uma única vez, sem a repetição da query <i>INSERT INTO</i>.
+
+```
+INSERT INTO selecao (nome_selecao, continente) values
+('Rússia', 'Europa'),
+('Arábia Saudita', 'Ásia'),
+('Egito', 'Ásia'),
+('Uruguai', 'América do Sul'),
+('Portugal', 'Europa'),
+('Espanha', 'Europa'),
+...);
+```
+
+### select * from selecao
+
+<a href="http://pt-br.tinypic.com?ref=300zosp" target="_blank"><img src="http://i67.tinypic.com/300zosp.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+## Tabela Selecao_Partida
+
 
 # Project Title
 
