@@ -72,6 +72,7 @@ INSERT INTO selecao (nome_selecao, continente) values
 
 <a href="http://pt-br.tinypic.com?ref=300zosp" target="_blank"><img src="http://i67.tinypic.com/300zosp.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
+_
 
 ## Tabela Grupo_Selecoes
 
@@ -80,7 +81,17 @@ INSERT INTO selecao (nome_selecao, continente) values
 A tabela grupo_selecoes tem por finalidade referenciar cada seleção criada através de seu respectivo grupo e armazenar, em seus registros, a condição atual dentro do grupo (pontos, vitórias, derrotas, empates, etc...).
 
 ```
-
+CREATE TABLE grupo_selecoes(
+nome_grupo char NOT NULL,
+id_selecao smallint NOT NULL references selecao,
+pontos smallint NOT NULL CHECK (pontos >= 0) default 0,
+jogos smallint NOT NULL CHECK (pontos >= 0) default 0,
+vitorias smallint NOT NULL CHECK (pontos >= 0) default 0,
+empates smallint NOT NULL CHECK (pontos >= 0) default 0,
+derrotas smallint NOT NULL CHECK (pontos >= 0) default 0,
+PRIMARY KEY (nome_grupo, id_selecao),
+CHECK (nome_grupo in ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H')));
+```
 
 # Project Title
 
