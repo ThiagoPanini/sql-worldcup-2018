@@ -1,26 +1,38 @@
 # World Cup Russia 2018
-A ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018. A utilização
-e o aprimoramento dos diversos conceitos aprendidos ao longo dessa caminhada é a principal motivação deste projeto, além de se tratar de algo extremamente apaixonante que se refere a este primoroso evento quatrienal conhecido como Copa do Mundo. 
-#JáÉCopa
+A ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018, utilizando, a princípio, a linguagem <b>SQL</b> como base. A utilização
+e o aprimoramento dos diversos conceitos aprendidos ao longo da caminhada acadêmica são as principais motivações deste projeto e, com a adição de algo extremamente apaixonante presente no dia-a-dia de grande parte da sociedade como a Copa do Mundo, o trabalho a apresentado a seguir possui encorajamento suficiente pra se tornar referência para projetos futuros dentro deste mesmo escopo.
 
 <img src="https://www.bodog.net/wp-content/uploads/2018/01/statistics_copa_do_mundo-1.jpg"/>
 
-Levado pelos recentes estudos, o projeto tem como primeiro alicerce a aplicação de conceitos de SQL para controlar, dentro um Banco de Dados, os fatos ocorridos durante a Copa do Mundo. Em outras palavras, visando aitribuir uma forma dinâmica ao aprendizado, pretende-se criar e atualizar eventos relevantes dentro de um SGBD. Mas como isso seria possível?
+# Primeiros Passos
+
+Levado pelos recentes estudos, o projeto tem como primeiro alicerce a aplicação de conceitos de SQL para controlar, dentro um Banco de Dados, os fatos ocorridos durante a Copa do Mundo. Visando aitribuir uma forma dinâmica ao aprendizado, pretende-se criar e atualizar eventos relevantes dentro de um Sistema de Gerenciamento de Banco de Dados. 
+
+# Softwares utilizados
+
+<a href="https://www.lucidchart.com/users/login">Lucidchart</a> - Modelagem dos dados e criação de diagramas UML.
+
+<a href="https://www.postgresql.org/download/">PostgreSQL</a> - SGBD utilizado para o gerenciamento das Queries.
+
+<a href="https://www.pgadmin.org/download/">pgAdmin4</a> - Interface via browser para utilização do Postgres.
+
+<a href="http://www.eclipse.org/downloads/">Eclipse IDE for Java Developers</a> - IDE Eclipse para integrações futuras (JDBC e JPA com Hibernate).
+
+<a href="https://drive.google.com/file/d/17hz1C3DqXLvEzx7oEXj6Pd3XVvYIIM_i/view?usp=sharing">postgresql-42.2.2.jar</a> - Driver JDBC para Eclipse/Postgres.
+
+<a href="https://drive.google.com/file/d/1jAukrD8r_SIKNsKO5mwVGZGWqR9ej6b4/view?usp=sharing">libs_postgres</a> - Libs para utilização do Hibernate com Eclipse/Postgres.
 
 
-# Primeiros Passos - Banco de Dados
-Como, a princípio, este projeto possui raízes pessoais, foram separados alguns conceitos para serem aplicados no decorrer do aprendizado. Sabe-se que a linguagem SQL está sempre em pauta e possuir domínio sobre esta caracteriza um atributo de caráter <i>essencial</i>. Unir este processo de aprendizado com a <b>modelagem</b> de um conceito presente no cotidiano de muitas pessoas foi a maneira encontrada para unir, de fato, o útil ao agradável, instigando um projeto dinâmico com muito a contribuir ao(s) engajado(s).
+# Modelagem de Dados 
 
-Bom, assim como o pequeno <i>spoiler</i> dado na palavra destacada, o intuito inicial é realizar a <b>modelagem</b> do Banco, abordando todos os conceitos necessários, Análise de Requisitos, verificação de tabelas, atributos, relacionamentos, entre outros tópicos que não só auxiliam na criação do BD, como também atuam de modo a otimizar este processo e evitar erros.
+Sabe-se que a linguagem SQL está sempre em pauta. Saber manipula-la é <i>essencial</i>. Unir a <b>modelagem</b> de um conceito presente no cotidiano de muitas pessoas foi a maneira encontrada para instigar um projeto dinâmico e de fácil entendimento por parte de contribuidores e espectadores. 
 
-# Modelagem de Dados - Copa Do Mundo
-
-Dada a introdução acima citada, a versão mais recente da modelagem deste projeto pode ser encontrada abaixo:
+A modelagem dos dados é uma etapa crucial que deve preceder a implementação física do modelo em um SGBD. Com isso, evita-se erros
 
 <a href="http://pt-br.tinypic.com?ref=a5i1xd" target="_blank"><img src="http://i67.tinypic.com/a5i1xd.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
 
 Foram obtidas diversas versões do modelo acima e, da mesma forma, outras diversas versões foram adaptadas e passadas por processos de normalização para otimização de tabelas e relações. Os atributos foram definidos de acordo com a utilidade do projeto e a possibilidade de captar dados reais referentes a tais campos através dos jogos propriamente ditos.
-Contudo, a modelagem acima ainda não está isenta de alterações, dada a divulgação pública do projeto e a clara abertura do projeto à opiniões externas, sejam estas oriundas de amigos próximos ou simplesmente simpatizantes do assunto.
+Contudo, a modelagem acima ainda não está isenta de alterações, dada a divulgação pública do projeto e sua abertura à opiniões externas, sejam estas oriundas de amigos próximos ou simplesmente de simpatizantes do assunto.
 
 # Project Title
 
