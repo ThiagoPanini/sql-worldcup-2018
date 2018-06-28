@@ -1,4 +1,4 @@
-# sql/worldCup_Russia_2018
+# SQL World Cup Russia 2018
 A  ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018, utilizando, a princípio, a linguagem <b>SQL</b> como base. A utilização
 e o aprimoramento dos diversos conceitos aprendidos ao longo da caminhada acadêmica são as principais motivações deste projeto e, com a adição de algo extremamente apaixonante presente no dia-a-dia de grande parte da sociedade como a Copa do Mundo, o trabalho a apresentado a seguir possui encorajamento suficiente pra se tornar referência para projetos futuros dentro deste mesmo escopo.
 
@@ -41,7 +41,7 @@ Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de aco
 <img src="http://www.agilitynetworks.com.br/blogdaagility/wp-content/uploads/2015/11/postgresql_1.png"/>
 
 
-## Tabela Seleção
+## 1.Tabela Seleção
 
 ### CREATE TABLE selecao
 
@@ -75,7 +75,7 @@ INSERT INTO selecao (nome_selecao, continente) values
 
 _
 
-## Tabela Grupo_Selecoes
+## 2.Tabela Grupo_Selecoes
 
 ### CREATE TABLE grupo_selecoes;
 
@@ -148,6 +148,41 @@ OBSERVAÇÕES:
 RESULTADO:
 
 <a href="http://pt-br.tinypic.com?ref=2qn8mjn" target="_blank"><img src="http://i63.tinypic.com/2qn8mjn.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+_
+
+## Tabela Fase
+
+### CREATE TABLE fase
+
+```
+CREATE TABLE fase
+id_fase serial smallint PRIMARY KEY NOT NULL CHECK(id_fase <=5),
+nome_fase varchar(50);
+```
+
+CONSTRAINTS:
+- id_fase é Chave Primária, não pode ser nulo e também não pode ser maior que 5;
+- nome_fase irá receber a descrição da fase por meio de palavra única.
+
+
+### INSERT INTO fase 
+
+```
+INSERT INTO fase (nome_fase) values
+('Grupos'), ('Oitavas'), ('Quartas'), ('Semi'), ('Final');
+```
+
+### SELECT * FROM fase
+
+<a href="http://pt-br.tinypic.com?ref=23jpobn" target="_blank"><img src="http://i65.tinypic.com/23jpobn.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+ADENDO: Necessidade de alteração na tabela <b>selecao</b>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Após a inclusão dos dados na tabela <b>fase</b>, houve a ideia de referenciar também o id_fase dentro da tabela selecao, proporcionando a visualização da fase atual de cada seleção dentro de sua própria tabela.
+
+
 
 # Project Title
 
