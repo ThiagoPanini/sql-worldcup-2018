@@ -42,8 +42,9 @@ Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de aco
 
 
 ## 1.Tabela Seleção
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE selecao
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 Para a criação da tabela responsável por referenciar as seleções presentes neste modelo de Copa do Mundo, foi utilizada a seguinte sintaxe:
 
@@ -53,8 +54,9 @@ id_selecao serial PRIMARY KEY NOT NULL,
 nome_selecao character varying(50),
 continente character varying(50));
 ```
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### INSERT INTO selecao
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 Para a inserção das seleções dentro da tabela, foi utilizada uma sintaxe que permitiu inserir todos os dados de uma única vez, sem a repetição da query <i>INSERT INTO</i>.
 
@@ -68,16 +70,18 @@ INSERT INTO selecao (nome_selecao, continente) values
 ('Espanha', 'Europa'),
 ...);
 ```
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### SELECT * FROM selecao
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 <a href="http://pt-br.tinypic.com?ref=300zosp" target="_blank"><img src="http://i67.tinypic.com/300zosp.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
 _
 
 ## 2.Tabela Grupo_Selecoes
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE grupo_selecoes;
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 A tabela grupo_selecoes tem por finalidade referenciar cada seleção criada através de seu respectivo grupo e armazenar, em seus registros, a condição atual dentro do grupo (pontos, vitórias, derrotas, empates, etc...).
 
@@ -101,8 +105,9 @@ CONSTRAINTS:
 - Os campos pontos, jogos, vitorias, empates e derrotas, não podem ser nulos, possuem valor default = 0 e, por fim, possuem restrição de negativos,
 - O campo nome_grupo deve estar entre os caracteres listados.
 
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### INSERT INTO grupo_selecoes;
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 A inserção dos valores se deu de modo único, ou seja, todos os valores foram colocados através de uma única Query. Um ponto a ser citado é o valor default dos demais atributos, tornando opcional sua declaração neste momento inicial.
 
@@ -117,12 +122,15 @@ INSERT INTO grupo_selecoes values
 ...
 ('H', 32);
 ```
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### SELECT * FROM grupo_selecoes
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 <a href="http://pt-br.tinypic.com?ref=34hc26f" target="_blank"><img src="http://i68.tinypic.com/34hc26f.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### INNER JOIN selecao ON grupo_selecoes.id_selecao = selecao.id_selecao
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 O comando acima é responsável por mostrar, ao usuário, uma tabela de grupos com visualização mais fácil e dinâmica, snedo esta referenciada pelo <i>nome_selecao</i> e não pelo <i>id_selecao</i>, como ocorrido em SELECT * from grupo_selecoes. Para tal, é necessário utilizar a sintaxe INNER JOIN para realizar consultas em duas tabelas: <b>selecao</b> (contendo o nome da seleção em questão) e <b>grupo_selecoes</b> (contendo todos os demais atributos). Veja a sintaxe completa:
 
@@ -151,9 +159,10 @@ RESULTADO:
 
 _
 
-## Tabela Fase
-
+## 3.Tabela Fase
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE fase
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 ```
 CREATE TABLE fase
@@ -165,15 +174,17 @@ CONSTRAINTS:
 - id_fase é Chave Primária, não pode ser nulo e também não pode ser maior que 5;
 - nome_fase irá receber a descrição da fase por meio de palavra única.
 
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### INSERT INTO fase 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 ```
 INSERT INTO fase (nome_fase) values
 ('Grupos'), ('Oitavas'), ('Quartas'), ('Semi'), ('Final');
 ```
-
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### SELECT * FROM fase
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 <a href="http://pt-br.tinypic.com?ref=23jpobn" target="_blank"><img src="http://i65.tinypic.com/23jpobn.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
