@@ -28,11 +28,13 @@ Levado pelos recentes estudos, o projeto tem como primeiro alicerce a aplicaçã
 Sabe-se que a linguagem SQL está sempre em pauta. Saber manipula-la é <i>essencial</i>. Unir a <b>modelagem</b> de um conceito presente no cotidiano de muitas pessoas foi a maneira encontrada para instigar um projeto dinâmico e de fácil entendimento por parte de contribuidores e espectadores. 
 
 A modelagem dos dados é uma etapa crucial que deve preceder a implementação física do modelo em um SGBD. Para o projeto em questão, foram utilizadas as ferramentas disponíveis na plataforma <b>Lucidchart</b>. O modelo pode ser visualizado abaixo:
-<p>
+
 <a href="http://pt-br.tinypic.com?ref=syo2ol" target="_blank"><img src="http://i66.tinypic.com/syo2ol.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
-</p>
+
 Foram obtidas diversas versões do modelo acima e, da mesma forma, outras diversas versões foram adaptadas e passadas por processos de normalização para otimização de tabelas e relações. Os atributos foram definidos de acordo com a utilidade do projeto e a possibilidade de captar dados reais referentes a tais campos através dos jogos propriamente ditos.
+
 Contudo, a modelagem acima ainda não está isenta de alterações, dada a divulgação pública do projeto e sua abertura à opiniões externas, sejam estas oriundas de amigos próximos ou simplesmente de simpatizantes do assunto.
+
 
 ALTERAÇÕES NA MODELAGEM:
 - Inserido campo id_fase na tabela <b>Seleção</b> como sendo Chave Estrangeira da tabela <b>Fase</b>;
