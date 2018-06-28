@@ -41,7 +41,7 @@ Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de aco
 <img src="http://www.agilitynetworks.com.br/blogdaagility/wp-content/uploads/2015/11/postgresql_1.png"/>
 
 
-## 1.Tabela Seleção
+# 1.Tabela Seleção
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE selecao
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
@@ -78,7 +78,8 @@ INSERT INTO selecao (nome_selecao, continente) values
 
 _
 
-## 2.Tabela Grupo_Selecoes
+
+# 2.Tabela Grupo_Selecoes
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE grupo_selecoes;
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
@@ -159,10 +160,11 @@ RESULTADO:
 
 _
 
-## 3.Tabela Fase
+# 3.Tabela Fase
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE fase
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+A criação desta tabela tem por objetivo organizar, durante as partidas, a respectiva fase que representa tal partida. Em outras palavras, com esse indexador será possível conhecer o "nível" de partida tratado.
 
 ```
 CREATE TABLE fase
@@ -193,7 +195,6 @@ INSERT INTO fase (nome_fase) values
 
 Após a inclusão dos dados na tabela <b>fase</b>, houve a ideia de referenciar também o id_fase dentro da tabela selecao, proporcionando a visualização da fase atual de cada seleção dentro de sua própria tabela.
 
-###ALTER TABLE selecao ADD COLUMN
 Dessa forma, a sintaxe para inserção de um novo campo na tabela selecao se deu por:
 
 ```
@@ -204,6 +205,40 @@ A partir do comando acima, foi adicionado o atributo id_fase à todos os itens d
 
 <a href="http://pt-br.tinypic.com?ref=n33p94" target="_blank"><img src="http://i68.tinypic.com/n33p94.png" border="0" alt="Image and video hosting by TinyPic"></a>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+# 4.Tabela Estádio
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### CREATE TABLE estadio
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+A tabela estadio irá armazenar o nome e a capacidade de todos os estádios sede de jogos.
+
+```
+CREATE TABLE estadio(
+id_estadio serial PRIMARY KEY,
+nome_estadio varchar(50),
+capacidade integer NOT NULL CHECK(capacidade > 0);
+```
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### INSERT INTO estadio
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Para finalizar a criação da tabela <b>estadio</b>, serão adicionados todos os estádios que irão sediar algum jogo da Copa.
+
+```
+INSERT INTO estadio (nome_estadio, capacidade, cidade_est) values
+('Lujinik', 80000, 'Moscou'),
+('Spartak', 45000, 'Moscou'),
+('Estádio de São Petesburgo', 67000, 'São Petesburgo'),
+...);
+```
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### SDLECT * FROM estadio
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Por fim, o resultado final apresentado pela tabela, após a inserção dos dados foi:
+
+<a href="http://pt-br.tinypic.com?ref=f2sqxs" target="_blank"><img src="http://i65.tinypic.com/f2sqxs.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
 
 
 
