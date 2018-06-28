@@ -29,16 +29,19 @@ Sabe-se que a linguagem SQL está sempre em pauta. Saber manipula-la é <i>essen
 
 A modelagem dos dados é uma etapa crucial que deve preceder a implementação física do modelo em um SGBD. Para o projeto em questão, foram utilizadas as ferramentas disponíveis na plataforma <b>Lucidchart</b>. O modelo pode ser visualizado abaixo:
 <p>
-<a href="http://pt-br.tinypic.com?ref=a5i1xd" target="_blank"><img src="http://i67.tinypic.com/a5i1xd.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
+<a href="http://pt-br.tinypic.com?ref=syo2ol" target="_blank"><img src="http://i66.tinypic.com/syo2ol.jpg" border="0" alt="Image and video hosting by TinyPic"></a>
 </p>
 Foram obtidas diversas versões do modelo acima e, da mesma forma, outras diversas versões foram adaptadas e passadas por processos de normalização para otimização de tabelas e relações. Os atributos foram definidos de acordo com a utilidade do projeto e a possibilidade de captar dados reais referentes a tais campos através dos jogos propriamente ditos.
 Contudo, a modelagem acima ainda não está isenta de alterações, dada a divulgação pública do projeto e sua abertura à opiniões externas, sejam estas oriundas de amigos próximos ou simplesmente de simpatizantes do assunto.
+
+ALTERAÇÕES NA MODELAGEM:
+- Inserido campo id_fase na tabela <b>Seleção</b> como sendo Chave Estrangeira da tabela <b>Fase</b>;
 
 # PostgreSQL
 
 Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de acordo com o Diagrama acima apresentado. Foi instalado o Banco de Dados PostgreSQL no Linux Ubuntu 18.04, bem como a interface pgadmin4 para auxiliar nas consultas/solicitações.
 
-<img src="http://www.agilitynetworks.com.br/blogdaagility/wp-content/uploads/2015/11/postgresql_1.png"/>
+<img src="https://pplware.sapo.pt/wp-content/uploads/2015/11/post_04.jpg"/>
 
 
 # 1.Tabela Seleção
