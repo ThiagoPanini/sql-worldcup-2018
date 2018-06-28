@@ -1,5 +1,5 @@
-# World Cup Russia 2018
-A ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018, utilizando, a princípio, a linguagem <b>SQL</b> como base. A utilização
+# sql/worldCup_Russia_2018
+A  ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018, utilizando, a princípio, a linguagem <b>SQL</b> como base. A utilização
 e o aprimoramento dos diversos conceitos aprendidos ao longo da caminhada acadêmica são as principais motivações deste projeto e, com a adição de algo extremamente apaixonante presente no dia-a-dia de grande parte da sociedade como a Copa do Mundo, o trabalho a apresentado a seguir possui encorajamento suficiente pra se tornar referência para projetos futuros dentro deste mesmo escopo.
 
 <img src="https://www.bodog.net/wp-content/uploads/2018/01/statistics_copa_do_mundo-1.jpg"/>
@@ -37,9 +37,10 @@ Contudo, a modelagem acima ainda não está isenta de alterações, dada a divul
 # PostgreSQL
 
 Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de acordo com o Diagrama acima apresentado. Foi instalado o Banco de Dados PostgreSQL no Linux Ubuntu 18.04, bem como a interface pgadmin4 para auxiliar nas consultas/solicitações.
-<p>
+
 <img src="http://www.agilitynetworks.com.br/blogdaagility/wp-content/uploads/2015/11/postgresql_1.png"/>
-</p>
+
+
 ## Tabela Seleção
 
 ### CREATE TABLE selecao
@@ -72,7 +73,7 @@ INSERT INTO selecao (nome_selecao, continente) values
 
 <a href="http://pt-br.tinypic.com?ref=300zosp" target="_blank"><img src="http://i67.tinypic.com/300zosp.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
--
+_
 
 ## Tabela Grupo_Selecoes
 
@@ -121,7 +122,32 @@ INSERT INTO grupo_selecoes values
 
 <a href="http://pt-br.tinypic.com?ref=34hc26f" target="_blank"><img src="http://i68.tinypic.com/34hc26f.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
+### INNER JOIN selecao ON grupo_selecoes.id_selecao = selecao.id_selecao
 
+O comando acima é responsável por mostrar, ao usuário, uma tabela de grupos com visualização mais fácil e dinâmica, snedo esta referenciada pelo <i>nome_selecao</i> e não pelo <i>id_selecao</i>, como ocorrido em SELECT * from grupo_selecoes. Para tal, é necessário utilizar a sintaxe INNER JOIN para realizar consultas em duas tabelas: <b>selecao</b> (contendo o nome da seleção em questão) e <b>grupo_selecoes</b> (contendo todos os demais atributos). Veja a sintaxe completa:
+
+```
+SELECT
+grupo_selecoes.nome_grupo as grupo,
+selecao.nome_selecao as selecao,
+grupo_selecoes.pontos, grupo_selecoes.jogos, grupo_selecoes.vitorias, grupo_selecoes.empates, grupo_selecoes.derrotas
+from grupo_selecoes
+inner join selecao on grupo_selecoes.id_selecao = selecao.id_selecao
+where grupo_selecoes.nome_grupo = 'E';
+```
+
+OBSERVAÇÕES:
+- A sintaxe <b>AS</b> define um "apelido" ao nome da coluna;
+- A sintaxe <i>tabela</i>.atributo é utilizada para separar os campos das tabelas envolvidas;
+- As linhas 2, 3 e 4 do código acima especificam, na ordem, quais atributos serão mostrados na consulta;
+- A sintaxe <b>FROM</b> especifica a tabela mais importante a ser consultada;
+- O comando <b>INNER JOIN</b> especifica a tabela a ser "mesclada";
+- O comando <b>ON</b> determina a condição na qual será realizada essa busca (FK - PK / id - id);
+- A condição <b>WHERE</b> condiciona apenas a visualização de um grupo.
+
+RESULTADO:
+
+<a href="http://pt-br.tinypic.com?ref=2qn8mjn" target="_blank"><img src="http://i63.tinypic.com/2qn8mjn.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
 # Project Title
 
