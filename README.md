@@ -189,9 +189,21 @@ INSERT INTO fase (nome_fase) values
 <a href="http://pt-br.tinypic.com?ref=23jpobn" target="_blank"><img src="http://i65.tinypic.com/23jpobn.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
-ADENDO: Necessidade de alteração na tabela <b>selecao</b>
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+<i>ADENDO: Necessidade de alteração na tabela <b>selecao</b></i>
+
 Após a inclusão dos dados na tabela <b>fase</b>, houve a ideia de referenciar também o id_fase dentro da tabela selecao, proporcionando a visualização da fase atual de cada seleção dentro de sua própria tabela.
+
+###ALTER TABLE selecao ADD COLUMN
+Dessa forma, a sintaxe para inserção de um novo campo na tabela selecao se deu por:
+
+```
+ALTER TABLE selecao ADD COLUMN id_fase smallint REFERENCES fase default 1;
+```
+
+A partir do comando acima, foi adicionado o atributo id_fase à todos os itens da tabela selecao, sendo seu resultado final dado por:
+
+<a href="http://pt-br.tinypic.com?ref=n33p94" target="_blank"><img src="http://i68.tinypic.com/n33p94.png" border="0" alt="Image and video hosting by TinyPic"></a>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
 
