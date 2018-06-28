@@ -237,14 +237,49 @@ INSERT INTO estadio (nome_estadio, capacidade, cidade_est) values
 ```
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-### SDLECT * FROM estadio
+### SELECT * FROM estadio
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 Por fim, o resultado final apresentado pela tabela, após a inserção dos dados foi:
 
 <a href="http://pt-br.tinypic.com?ref=f2sqxs" target="_blank"><img src="http://i65.tinypic.com/f2sqxs.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
+# 5.Tabela Árbitro
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### CREATE TABLE arbitro
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+A tabela em questão irá armazenar o nome, a nacionalidade e a quantidade de partidas referentes aos árbitros selecionados para a Copa do Mundo Rússia 2018.
 
+```
+CREATE TABLE arbitro(
+id_arbitro serial PRIMARY KEY,
+nome_arbitro varchar(50),
+nacionalidade varchar(50) NOT NULL,
+qtd_partidas smallint NOT NULL default 0);
+```
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### INSERT INTO arbitro
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Após a criação da tabela, foram reunidos os dados de todos os árbitros participantes da Copa e, através da Query de inserção, tais dados foram inseridos na tabela de acordo com a sintaxe abaixo:
+
+```
+INSERT INTO arbitro (nome_arbitro, nacionalidade) values
+(‘Enrique Cáceres’, ‘Paraguai’),
+(‘Andrés Cunha’, ‘Uruguai’),
+(‘Néstor Pitana’, ‘Argentina’),
+(‘Sandro Meira Ricci’, ‘Brasil’),
+(‘Wilmar Roldán’, ‘Colômbia’),
+(‘Felix Brych’, ‘Alemanha’),
+(‘Cüneyt Çakır’, ‘Turquia’),
+(...);
+```
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### SELECT * FROM arbitro
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Dessa forma, a seleção dos valores da tabela arbitro tem como resultado:
 
 
 # Project Title
