@@ -288,4 +288,19 @@ Dessa forma, a seleção dos valores da tabela arbitro tem como resultado:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ### CREATE TABLE partida
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-Após toda a preparação necessária, é chegado o momento de criação das duas principais tabelas desta modelagem: <i>Partida</i> e <i>Sele
+Após toda a preparação necessária, é chegado o momento de criação das duas principais tabelas desta modelagem: <i>Partida</i> e <i>Selecao_partidas</i>, onde ambas serão responsáveis pela organização dos jogos entre as seleções, bem como os atributos e variantes que ocorrem a cada partida, como Gols, Cartões, uso do VAR, etc. Dessa forma, a criação da tabela <i>Partida</i> se deu por:
+
+```
+CREATE TABLE partida(
+id_partida serial PRIMARY KEY,
+id_fase smallint REFERENCES fase,
+data_partida timestamp NOT NULL,
+id_estadio smallint REFERENCES estadio,
+publico integer CHECK(publico > 0),
+id_arbitro smalint REFERENCES arbitro,
+uso_var boolean DEFAULT false);
+```
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### INSERT INTO partida
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
