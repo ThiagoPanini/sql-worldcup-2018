@@ -46,7 +46,7 @@ Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de aco
 <img src="https://pplware.sapo.pt/wp-content/uploads/2015/11/post_04.jpg"/>
 
 
-# 1.Tabela Seleção
+# 1. Tabela Seleção
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE selecao
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
@@ -84,7 +84,7 @@ INSERT INTO selecao (nome_selecao, continente) values
 _
 
 
-# 2.Tabela Grupo_Selecoes
+# 2. Tabela Grupo_Selecoes
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE grupo_selecoes;
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
@@ -165,7 +165,7 @@ RESULTADO:
 
 _
 
-# 3.Tabela Fase
+# 3. Tabela Fase
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ### CREATE TABLE fase
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
@@ -211,7 +211,7 @@ A partir do comando acima, foi adicionado o atributo id_fase à todos os itens d
 <a href="http://pt-br.tinypic.com?ref=n33p94" target="_blank"><img src="http://i68.tinypic.com/n33p94.png" border="0" alt="Image and video hosting by TinyPic"></a>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-# 4.Tabela Estádio
+# 4. Tabela Estádio
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ### CREATE TABLE estadio
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -244,7 +244,7 @@ Por fim, o resultado final apresentado pela tabela, após a inserção dos dados
 
 <a href="http://pt-br.tinypic.com?ref=f2sqxs" target="_blank"><img src="http://i65.tinypic.com/f2sqxs.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
-# 5.Tabela Árbitro
+# 5. Tabela Árbitro
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ### CREATE TABLE arbitro
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -281,3 +281,11 @@ INSERT INTO arbitro (nome_arbitro, nacionalidade) values
 
 Dessa forma, a seleção dos valores da tabela arbitro tem como resultado:
 
+<a href="http://pt-br.tinypic.com?ref=5xudch" target="_blank"><img src="http://i63.tinypic.com/5xudch.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+
+# 6. Tabela Partida
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+### CREATE TABLE partida
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Após toda a preparação necessária, é chegado o momento de criação das duas principais tabelas desta modelagem: <i>Partida</i> e <i>Sele
