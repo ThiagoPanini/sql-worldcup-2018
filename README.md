@@ -48,7 +48,9 @@ Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de aco
 
 # 1. Tabela Seleção
 
+---
 ### CREATE TABLE selecao
+---
 
 Para a criação da tabela responsável por referenciar as seleções presentes neste modelo de Copa do Mundo, foi utilizada a seguinte sintaxe:
 
@@ -58,8 +60,10 @@ id_selecao serial PRIMARY KEY NOT NULL,
 nome_selecao character varying(50),
 continente character varying(50));
 ```
+
 ---
 ### INSERT INTO selecao
+---
 
 Para a inserção das seleções dentro da tabela, foi utilizada uma sintaxe que permitiu inserir todos os dados de uma única vez, sem a repetição da query <i>INSERT INTO</i>.
 
@@ -73,10 +77,10 @@ INSERT INTO selecao (nome_selecao, continente) values
 ('Espanha', 'Europa'),
 ...);
 ```
+
 ---
-
 ### SELECT * FROM selecao
-
+---
 
 <a href="http://pt-br.tinypic.com?ref=300zosp" target="_blank"><img src="http://i67.tinypic.com/300zosp.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
@@ -85,8 +89,9 @@ _
 
 # 2. Tabela Grupo_Selecoes
 
+---
 ### CREATE TABLE grupo_selecoes;
-
+---
 
 A tabela grupo_selecoes tem por finalidade referenciar cada seleção criada através de seu respectivo grupo e armazenar, em seus registros, a condição atual dentro do grupo (pontos, vitórias, derrotas, empates, etc...).
 
@@ -112,6 +117,7 @@ CONSTRAINTS:
 
 ---
 ### INSERT INTO grupo_selecoes;
+---
 
 A inserção dos valores se deu de modo único, ou seja, todos os valores foram colocados através de uma única Query. Um ponto a ser citado é o valor default dos demais atributos, tornando opcional sua declaração neste momento inicial.
 
@@ -126,15 +132,16 @@ INSERT INTO grupo_selecoes values
 ...
 ('H', 32);
 ```
+
 ---
 ### SELECT * FROM grupo_selecoes
-
+---
 
 <a href="http://pt-br.tinypic.com?ref=34hc26f" target="_blank"><img src="http://i68.tinypic.com/34hc26f.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 ### INNER JOIN selecao ON grupo_selecoes.id_selecao = selecao.id_selecao
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 
 O comando acima é responsável por mostrar, ao usuário, uma tabela de grupos com visualização mais fácil e dinâmica, snedo esta referenciada pelo <i>nome_selecao</i> e não pelo <i>id_selecao</i>, como ocorrido em SELECT * from grupo_selecoes. Para tal, é necessário utilizar a sintaxe INNER JOIN para realizar consultas em duas tabelas: <b>selecao</b> (contendo o nome da seleção em questão) e <b>grupo_selecoes</b> (contendo todos os demais atributos). Veja a sintaxe completa:
 
@@ -164,9 +171,9 @@ RESULTADO:
 _
 
 # 3. Tabela Fase
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+
 ### CREATE TABLE fase
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 A criação desta tabela tem por objetivo organizar, durante as partidas, a respectiva fase que representa tal partida. Em outras palavras, com esse indexador será possível conhecer o "nível" de partida tratado.
 
 ```
@@ -179,21 +186,21 @@ CONSTRAINTS:
 - id_fase é Chave Primária, não pode ser nulo e também não pode ser maior que 5;
 - nome_fase irá receber a descrição da fase por meio de palavra única.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 ### INSERT INTO fase 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 
 ```
 INSERT INTO fase (nome_fase) values
 ('Grupos'), ('Oitavas'), ('Quartas'), ('Semi'), ('Final');
 ```
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 ### SELECT * FROM fase
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 
 <a href="http://pt-br.tinypic.com?ref=23jpobn" target="_blank"><img src="http://i65.tinypic.com/23jpobn.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 <i>ADENDO: Necessidade de alteração na tabela <b>selecao</b></i>
 
 Após a inclusão dos dados na tabela <b>fase</b>, houve a ideia de referenciar também o id_fase dentro da tabela selecao, proporcionando a visualização da fase atual de cada seleção dentro de sua própria tabela.
@@ -207,12 +214,14 @@ ALTER TABLE selecao ADD COLUMN id_fase smallint REFERENCES fase default 1;
 A partir do comando acima, foi adicionado o atributo id_fase à todos os itens da tabela selecao, sendo seu resultado final dado por:
 
 <a href="http://pt-br.tinypic.com?ref=n33p94" target="_blank"><img src="http://i68.tinypic.com/n33p94.png" border="0" alt="Image and video hosting by TinyPic"></a>
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 
 # 4. Tabela Estádio
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
 ### CREATE TABLE estadio
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+--- 
+
 A tabela estadio irá armazenar o nome e a capacidade de todos os estádios sede de jogos.
 
 ```
@@ -221,9 +230,9 @@ id_estadio serial PRIMARY KEY,
 nome_estadio varchar(50),
 capacidade integer NOT NULL CHECK(capacidade > 0);
 ```
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 ### INSERT INTO estadio
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 Para finalizar a criação da tabela <b>estadio</b>, serão adicionados todos os estádios que irão sediar algum jogo da Copa.
 
 ```
@@ -234,18 +243,18 @@ INSERT INTO estadio (nome_estadio, capacidade, cidade_est) values
 ...);
 ```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 ### SELECT * FROM estadio
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 
 Por fim, o resultado final apresentado pela tabela, após a inserção dos dados foi:
 
 <a href="http://pt-br.tinypic.com?ref=f2sqxs" target="_blank"><img src="http://i65.tinypic.com/f2sqxs.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
 # 5. Tabela Árbitro
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 ### CREATE TABLE arbitro
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 A tabela em questão irá armazenar o nome, a nacionalidade e a quantidade de partidas referentes aos árbitros selecionados para a Copa do Mundo Rússia 2018.
 
 ```
@@ -256,9 +265,9 @@ nacionalidade varchar(50) NOT NULL,
 qtd_partidas smallint NOT NULL default 0);
 ```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 ### INSERT INTO arbitro
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 Após a criação da tabela, foram reunidos os dados de todos os árbitros participantes da Copa e, através da Query de inserção, tais dados foram inseridos na tabela de acordo com a sintaxe abaixo:
 
 ```
@@ -273,9 +282,9 @@ INSERT INTO arbitro (nome_arbitro, nacionalidade) values
 (...);
 ```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 ### SELECT * FROM arbitro
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 
 Dessa forma, a seleção dos valores da tabela arbitro tem como resultado:
 
@@ -283,9 +292,9 @@ Dessa forma, a seleção dos valores da tabela arbitro tem como resultado:
 
 
 # 6. Tabela Partida
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
 ### CREATE TABLE partida
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 Após toda a preparação necessária, é chegado o momento de criação das duas principais tabelas desta modelagem: <i>Partida</i> e <i>Selecao_partidas</i>, onde ambas serão responsáveis pela organização dos jogos entre as seleções, bem como os atributos e variantes que ocorrem a cada partida, como Gols, Cartões, uso do VAR, etc. Dessa forma, a criação da tabela <i>Partida</i> se deu por:
 
 ```
@@ -299,6 +308,6 @@ id_arbitro smalint REFERENCES arbitro,
 uso_var boolean DEFAULT false);
 ```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
 ### INSERT INTO partida
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+---
