@@ -47,9 +47,8 @@ Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de aco
 
 
 # 1. Tabela Seleção
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+
 ### CREATE TABLE selecao
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 Para a criação da tabela responsável por referenciar as seleções presentes neste modelo de Copa do Mundo, foi utilizada a seguinte sintaxe:
 
@@ -59,9 +58,8 @@ id_selecao serial PRIMARY KEY NOT NULL,
 nome_selecao character varying(50),
 continente character varying(50));
 ```
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 ### INSERT INTO selecao
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 Para a inserção das seleções dentro da tabela, foi utilizada uma sintaxe que permitiu inserir todos os dados de uma única vez, sem a repetição da query <i>INSERT INTO</i>.
 
@@ -75,9 +73,10 @@ INSERT INTO selecao (nome_selecao, continente) values
 ('Espanha', 'Europa'),
 ...);
 ```
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
+
 ### SELECT * FROM selecao
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+
 
 <a href="http://pt-br.tinypic.com?ref=300zosp" target="_blank"><img src="http://i67.tinypic.com/300zosp.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
@@ -85,9 +84,9 @@ _
 
 
 # 2. Tabela Grupo_Selecoes
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+
 ### CREATE TABLE grupo_selecoes;
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+
 
 A tabela grupo_selecoes tem por finalidade referenciar cada seleção criada através de seu respectivo grupo e armazenar, em seus registros, a condição atual dentro do grupo (pontos, vitórias, derrotas, empates, etc...).
 
@@ -111,9 +110,8 @@ CONSTRAINTS:
 - Os campos pontos, jogos, vitorias, empates e derrotas, não podem ser nulos, possuem valor default = 0 e, por fim, possuem restrição de negativos,
 - O campo nome_grupo deve estar entre os caracteres listados.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 ### INSERT INTO grupo_selecoes;
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 A inserção dos valores se deu de modo único, ou seja, todos os valores foram colocados através de uma única Query. Um ponto a ser citado é o valor default dos demais atributos, tornando opcional sua declaração neste momento inicial.
 
@@ -128,9 +126,9 @@ INSERT INTO grupo_selecoes values
 ...
 ('H', 32);
 ```
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+---
 ### SELECT * FROM grupo_selecoes
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+
 
 <a href="http://pt-br.tinypic.com?ref=34hc26f" target="_blank"><img src="http://i68.tinypic.com/34hc26f.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
