@@ -48,7 +48,7 @@ Dessa forma, o próximo passo se deu no sentido de implementar as tabelas de aco
 
 # 1. Tabela Seleção
 
----
+
 ### CREATE TABLE selecao
 ---
 
@@ -215,6 +215,7 @@ A partir do comando acima, foi adicionado o atributo id_fase à todos os itens d
 
 <a href="http://pt-br.tinypic.com?ref=n33p94" target="_blank"><img src="http://i68.tinypic.com/n33p94.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
+_
 
 # 4. Tabela Estádio
 
@@ -250,6 +251,8 @@ INSERT INTO estadio (nome_estadio, capacidade, cidade_est) values
 Por fim, o resultado final apresentado pela tabela, após a inserção dos dados foi:
 
 <a href="http://pt-br.tinypic.com?ref=f2sqxs" target="_blank"><img src="http://i65.tinypic.com/f2sqxs.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+_
 
 # 5. Tabela Árbitro
 
@@ -290,6 +293,7 @@ Dessa forma, a seleção dos valores da tabela arbitro tem como resultado:
 
 <a href="http://pt-br.tinypic.com?ref=5xudch" target="_blank"><img src="http://i63.tinypic.com/5xudch.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
+_
 
 # 6. Tabela Partida
 
