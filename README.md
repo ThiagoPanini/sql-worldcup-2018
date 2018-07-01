@@ -315,3 +315,41 @@ uso_var boolean DEFAULT false);
 ---
 ### INSERT INTO partida
 ---
+
+A inserção de dados dentro da tabela <b>partida</b> se deu através de pesquisas em sites esportivos a fim de reunir informações específicas de cada partida, como o estádio, o público, o árbitro e até mesmo o uso ou não da tecnologia do VAR. Em muitos momentos, houve dificuldades em encontrar esta informação, uma vez que os principais sites esportivos não reuniam todas elas em um único lugar, ou muitas vezes não as mostravam. De toda forma, a sintaxe para inserção destes dados foi a seguinte:
+
+
+```
+INSERT INTO partida (id_fase, data_partida, id_estadio, publico, id_arbitro, uso_var)
+values (1, '14-06-2018 12:00:00', 1, 78011, 24, false);
+```
+O codigo acima exemplifica a inserçao da partida de abertura da Copa do Mundo. 
+
+---
+### SELECT * FROM partida
+---
+
+Abaixo e apresentada a tabela partida apos a query de seleçao:
+
+<a href="http://pt-br.tinypic.com?ref=sg3k7s" target="_blank"><img src="http://i64.tinypic.com/sg3k7s.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+Entretanto, visando dinamizar a apresentação dos dados ao usuário, foi utilizada uma sintaxe de seleção diferenciada contemplando conceitos de <b>INNER JOIN</b> com as tabelas <b>arbitro</b> e <b>estadio</b>:
+
+```
+SELECT partida.id_partida, fase.nome_fase, partida.data_partida, partida.id_estadio, estadio.nome_estadio,
+partida.publico, partida.id_arbitro, arbitro.nome_arbitro, arbitro.qtd_partidas, partida.uso_var
+FROM partida
+INNER JOIN fase ON partida.id_fase = fase.id_fase
+INNER JOIN arbitro ON partida.id_arbitro = arbitro.id_arbitro
+INNER JOIN estadio ON partida.id_estadio = estadio.id_arbitro
+ORDER BY partida.id_partida;
+```
+
+Dessa forma, foi possível visualizar, a cada inserção da tabela partida, seus respectivos dados de estadio e arbitro. 
+
+Um outro a ponto a ser considerado foi o incremento, dentro da tabela arbitro, do atributo qtd_partidas de acordo com a seleção do id do arbitro em cada partida:
+
+```
+UPDATE arbitro SET qtd_partidas = qtd_partidas + 1 WHERE id_arbitro = x;
+```
+Onde 'x' é, de fato, o id do árbitro referente a partida que está sendo cadastrada.
