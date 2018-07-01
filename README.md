@@ -1,5 +1,5 @@
 # SQL World Cup Russia 2018
-A  ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018, utilizando, a princípio, a linguagem <b>SQL</b> como base. A utilização
+  A  ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018, utilizando, a princípio, a linguagem <b>SQL</b> como base. A utilização
 e o aprimoramento dos diversos conceitos aprendidos ao longo da caminhada acadêmica são as principais motivações deste projeto e, com a adição de algo extremamente apaixonante presente no dia-a-dia de grande parte da sociedade como a Copa do Mundo, o trabalho a apresentado a seguir possui encorajamento suficiente pra se tornar referência para projetos futuros dentro deste mesmo escopo.
 
 <img src="https://www.bodog.net/wp-content/uploads/2018/01/statistics_copa_do_mundo-1.jpg"/>
@@ -345,7 +345,9 @@ INNER JOIN estadio ON partida.id_estadio = estadio.id_arbitro
 ORDER BY partida.id_partida;
 ```
 
-Dessa forma, foi possível visualizar, a cada inserção da tabela partida, seus respectivos dados de estadio e arbitro. 
+Dessa forma, foi possível visualizar, a cada inserção da tabela partida, seus respectivos dados de estadio e arbitro:
+
+<a href="http://pt-br.tinypic.com?ref=2e4erys" target="_blank"><img src="http://i68.tinypic.com/2e4erys.png" border="0" alt="Image and video hosting by TinyPic"></a>
 
 Um outro a ponto a ser considerado foi o incremento, dentro da tabela arbitro, do atributo qtd_partidas de acordo com a seleção do id do arbitro em cada partida:
 
