@@ -341,7 +341,7 @@ partida.publico, partida.id_arbitro, arbitro.nome_arbitro, arbitro.qtd_partidas,
 FROM partida
 INNER JOIN fase ON partida.id_fase = fase.id_fase
 INNER JOIN arbitro ON partida.id_arbitro = arbitro.id_arbitro
-INNER JOIN estadio ON partida.id_estadio = estadio.id_arbitro
+INNER JOIN estadio ON partida.id_estadio = estadio.id_estadio
 ORDER BY partida.id_partida;
 ```
 
