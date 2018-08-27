@@ -2,7 +2,7 @@
   A  ideia se baseia no seguinte anseio: criar algo único e totalmente sem compromisso relacionado a Copa do Mundo Russia 2018, utilizando, a princípio, a linguagem <b>SQL</b> como base. A utilização
 e o aprimoramento dos diversos conceitos aprendidos ao longo da caminhada acadêmica são as principais motivações deste projeto e, com a adição de algo extremamente apaixonante presente no dia-a-dia de grande parte da sociedade como a Copa do Mundo, o trabalho a apresentado a seguir possui encorajamento suficiente pra se tornar referência para projetos futuros dentro deste mesmo escopo.
 
-<img src="https://www.bodog.net/wp-content/uploads/2018/01/statistics_copa_do_mundo-1.jpg"/>
+<a href="http://pt-br.tinypic.com?ref=2lkuyx2" target="_blank"><img src="http://i67.tinypic.com/2lkuyx2.png" border="0" alt="World-Cup-Russia-2018"></a>
 
 # Primeiros Passos
 
